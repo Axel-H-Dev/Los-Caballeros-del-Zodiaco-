@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los caballeros del zodiaco</title>
+    <link rel="stylesheet" href="style.css">
+
+
+
+</head>
+
+
+<body class="body-general">
+
+    <section class="video-principal">
+        <video width="640" height="360" autoplay muted loop playsinline>
+            <source src="img/video intro.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <div class="layout">
+        <div class="nav-wrapper">
+            <button class="toggle-nav" onclick="toggleNav()">☰</button>
+            <nav class="navbar" id="navbar">
+                <a href="index.html">Inicio</a>
+                <a href="galeria.html">Galería</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="contactanos.html">Contáctanos</a>
+            </nav>
+        </div>
+
+        <div class="contenido">
+            <main>
+                <h1>Los caballeros del zodiaco</h1>
+                <p>Los caballeros del zodiaco es una serie de anime y manga creada por Masami Kurumada. La historia
+                    sigue a un grupo de jóvenes guerreros conocidos como los Caballeros, quienes luchan para proteger a
+                    la diosa Atenea y salvar al mundo de las fuerzas del mal. Cada Caballero tiene una armadura
+                    inspirada en una constelación y posee habilidades especiales relacionadas con su constelación. La
+                    serie ha sido muy popular desde su lanzamiento en la década de 1980 y ha generado varias
+                    adaptaciones, incluyendo películas, videojuegos y spin-offs.</p>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        function toggleNav() {
+            document.getElementById('navbar').classList.toggle('navbar-oculta');
+        }
+    </script>
+
+</body>
+
+
+
+</html>
