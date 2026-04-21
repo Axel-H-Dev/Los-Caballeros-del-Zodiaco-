@@ -15,9 +15,10 @@
 <body class="body-general">
 
     <section class="video-principal">
-        <video width="640" height="360" autoplay muted loop playsinline>
-            <source src="img/video intro.mp4" type="video/mp4">
+        <video id="miVideo" width="640" height="360" autoplay loop playsinline>
+            <source src="img/video.mp4" type="video/mp4">
         </video>
+        <button class="btn-mute" id="btnMute" onclick="toggleMute()">🔇</button>
     </section>
 
     <div class="layout">
@@ -32,21 +33,40 @@
         </div>
 
         <div class="contenido">
-            <main>
-                <h1>Los caballeros del zodiaco</h1>
-                <p>Los caballeros del zodiaco es una serie de anime y manga creada por Masami Kurumada. La historia
-                    sigue a un grupo de jóvenes guerreros conocidos como los Caballeros, quienes luchan para proteger a
-                    la diosa Atenea y salvar al mundo de las fuerzas del mal. Cada Caballero tiene una armadura
-                    inspirada en una constelación y posee habilidades especiales relacionadas con su constelación. La
-                    serie ha sido muy popular desde su lanzamiento en la década de 1980 y ha generado varias
-                    adaptaciones, incluyendo películas, videojuegos y spin-offs.</p>
-            </main>
+            <div class="contenido-wrapper">
+                <main>
+                    <h1>Los caballeros del zodiaco</h1>
+                    <p>Los caballeros del zodiaco es una serie de anime y manga creada por Masami Kurumada. La historia
+                        sigue a un grupo de jóvenes guerreros conocidos como los Caballeros, quienes luchan para proteger a
+                        la diosa Atenea y salvar al mundo de las fuerzas del mal. Cada Caballero tiene una armadura
+                        inspirada en una constelación y posee habilidades especiales relacionadas con su constelación. La
+                        serie ha sido muy popular desde su lanzamiento en la década de 1980 y ha generado varias
+                        adaptaciones, incluyendo películas, videojuegos y spin-offs.</p>
+                    <p>Los Caballeros se dividen en tres rangos: de Bronce, de Plata y de Oro. Los de Bronce son los
+                        protagonistas principales, jóvenes guerreros que deben demostrar su valor en batalla. Los de Plata
+                        son más poderosos y actúan como fuerzas de élite del Santuario. Los de Oro, los más poderosos de
+                        todos, custodian las doce casas del Zodiaco y poseen un cosmo casi divino.</p>
+                    <p>A lo largo de la serie, los Caballeros de Bronce enfrentan enemigos cada vez más poderosos: desde
+                        los guerreros de la Marina bajo el mando de Poseidón, hasta los espectros de Hades en el inframundo.
+                        Cada saga pone a prueba no solo su fuerza física, sino también su voluntad y el vínculo que los une
+                        como hermanos de batalla.</p>
+                </main>
+                
+            </div>
         </div>
     </div>
 
     <script>
         function toggleNav() {
             document.getElementById('navbar').classList.toggle('navbar-oculta');
+        }
+        const video = document.getElementById("miVideo");
+                video.volume = 0.2; // 20% de volumen
+        function toggleMute() {
+            const video = document.getElementById('miVideo');
+            const btn = document.getElementById('btnMute');
+            video.muted = !video.muted;
+            btn.textContent = video.muted ? '🔇 ' : '🔊 ';
         }
     </script>
 

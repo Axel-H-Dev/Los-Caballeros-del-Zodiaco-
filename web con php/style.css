@@ -1,24 +1,7 @@
 
-.body-general {
-    background-color: black;
-}
-
-.video-principal {
-    width: 100%;
-    
-    line-height: 0;
-}
-
-.video-principal video {
-    margin-top: 0;
-        border: 0;
-        border-radius: 0;
-    width: 100%;
-    height: fit-content;
-    height: 55vh;
-    object-fit: fill;
-        box-shadow: none;
-}
+/* ============================================
+   ESTILOS COMPARTIDOS (todas las páginas)
+   ============================================ */
 
 .layout {
     display: flex;
@@ -29,21 +12,23 @@
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
+    box-shadow: none;
 }
 
 .toggle-nav {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: transparent;
     color: #a29e9e;
     border: none;
     padding: 10px 14px;
     font-size: 16px;
     cursor: pointer;
-    width: 100%;
+    width: 190px;
     text-align: left;
+    
 }
 
 .toggle-nav:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: transparent;
 }
 
 .navbar {
@@ -51,7 +36,7 @@
     flex-direction: column;
     gap: 12px;
     padding: 18px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: transparent;
     width: 190px;
     flex: 1;
     box-sizing: border-box;
@@ -82,12 +67,136 @@
 }
 
 main {
-    max-width: 900px;
-    margin: 28px auto;
+    flex: 1;
     padding: 20px;
     color: #ffffff;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 12px;
+    text-align: center;
+}
+
+
+/* ============================================
+   INICIO (index.html) — .body-general
+   ============================================ */
+
+.body-general {
+    background-color: #000000;
+}
+
+.body-general .layout {
+    background-image: url("img/fondo2.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+/* Video */
+.video-principal {
+    width: 100%;
+    line-height: 0;
+    position: relative;
+}
+
+.video-principal video {
+    display: block;
+    width: 100%;
+    height: 60vh;
+    object-fit: fill;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    margin-top: 0;
+}
+
+.btn-mute {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.btn-mute:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* ============================================
+   GALERÍA (galeria.html) — .body-galeria
+   ============================================ */
+
+
+
+.body-galeria {
+    background-image: url("img/fondo galeria.jpg");
+    background-size: 100% ; 
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.body-galeria .galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.body-galeria .galeria-card {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.body-galeria .galeria-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+
+
+
+/* ============================================
+   NOSOTROS (nosotros.html) — .body-nosotros
+   ============================================ */
+
+.body-nosotros {
+    background-color: #000000;
+}
+
+.body-nosotros .layout {
+    background-image: url("img/fondo nosotros.jpg"); /* cambiá el fondo acá */
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+/* ============================================
+   CONTÁCTANOS (contactanos.html) — .body-contactanos
+   ============================================ */
+
+.body-contactanos {
+    background-color: #000000;
+}
+
+.body-contactanos .layout {
+    background-image: url("img/fondo contactanos.jpg"); /* cambiá el fondo acá */
+    background-size: cover;
+    background-position: center;
 }
 
 
