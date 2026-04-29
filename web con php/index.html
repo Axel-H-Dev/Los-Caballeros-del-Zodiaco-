@@ -114,17 +114,21 @@
                     <p>Completá el formulario o escribinos por los siguientes medios.</p>
 
                     <div class="contacto-grid">
-                        <form class="contacto-form" action="#" method="post">
+                        <form class="contacto-form" id="contacto-form" action="https://formsubmit.co/axel4798788@gmail.com" method="post">
+                            <input type="hidden" name="_subject" value="Nuevo mensaje desde la web">
+                            <input type="hidden" name="_captcha" value="false">
+
                             <label for="nombre">Nombre</label>
                             <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
 
                             <label for="correo">Correo</label>
-                            <input type="email" id="correo" name="correo" placeholder="tunombre@correo.com" required>
+                            <input type="email" id="correo" name="email" placeholder="tunombre@correo.com" required>
 
                             <label for="mensaje">Mensaje</label>
                             <textarea id="mensaje" name="mensaje" rows="5" placeholder="Contanos en qué te podemos ayudar" required></textarea>
 
                             <button type="submit" class="btn-enviar">Enviar mensaje</button>
+                            <p id="estado-envio" class="estado-envio" aria-live="polite"></p>
                         </form>
                     </div>
                 </section>
@@ -163,6 +167,43 @@
             const btn = document.getElementById('btnMute');
             video.muted = !video.muted;
             btn.textContent = video.muted ? '🔇 ' : '🔊 ';
+        }
+
+        const contactoForm = document.getElementById('contacto-form');
+        const estadoEnvio = document.getElementById('estado-envio');
+
+        if (contactoForm && estadoEnvio) {
+            contactoForm.addEventListener('submit', async function (event) {
+                event.preventDefault();
+                estadoEnvio.textContent = 'Enviando mensaje...';
+                estadoEnvio.className = 'estado-envio';
+
+                const datos = new FormData(contactoForm);
+
+                try {
+                    const respuesta = await fetch('https://formsubmit.co/ajax/axel4798788@gmail.com', {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json'
+                        },
+                        body: datos
+                    });
+
+                    const resultado = await respuesta.json();
+
+                    if (respuesta.ok) {
+                        estadoEnvio.textContent = 'Mensaje enviado con exito. Gracias por contactarte.';
+                        estadoEnvio.className = 'estado-envio estado-exito';
+                        contactoForm.reset();
+                    } else {
+                        estadoEnvio.textContent = resultado.message || 'No se pudo enviar el mensaje. Intenta de nuevo.';
+                        estadoEnvio.className = 'estado-envio estado-error';
+                    }
+                } catch (error) {
+                    estadoEnvio.textContent = 'No se pudo conectar con el servicio de correo. Intenta en unos minutos.';
+                    estadoEnvio.className = 'estado-envio estado-error';
+                }
+            });
         }
     </script>
 

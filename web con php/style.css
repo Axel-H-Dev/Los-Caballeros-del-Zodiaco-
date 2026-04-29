@@ -256,6 +256,21 @@ html {
     background-color: rgba(255, 255, 255, 0.22);
 }
 
+.estado-envio {
+    min-height: 20px;
+    margin-top: 8px;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.estado-exito {
+    color: #8ef7b0;
+}
+
+.estado-error {
+    color: #ff9d9d;
+}
+
 
 
 .email-link {
