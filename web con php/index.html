@@ -15,7 +15,7 @@
 <body class="body-general">
 
     <section class="video-principal">
-        <video id="miVideo" width="640" height="360" autoplay loop playsinline>
+        <video id="miVideo" width="640" height="360" autoplay muted playsinline>
             <source src="img/video.mp4" type="video/mp4">
         </video>
         <button class="btn-mute" id="btnMute" onclick="toggleMute()">🔇</button>
@@ -25,43 +25,139 @@
         <div class="nav-wrapper">
             <button class="toggle-nav" onclick="toggleNav()">☰</button>
             <nav class="navbar" id="navbar">
-                <a href="index.html">Inicio</a>
-                <a href="galeria.html">Galería</a>
-                <a href="nosotros.html">Nosotros</a>
-                <a href="contactanos.html">Contáctanos</a>
+                <a href="#inicio">Inicio</a>
+                <a href="#galeria">Galería</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contactanos">Contáctanos</a>
             </nav>
         </div>
 
         <div class="contenido">
             <div class="contenido-wrapper">
-                <main>
+                <main id="inicio" class="seccion seccion-inicio">
                     <h1>Los caballeros del zodiaco</h1>
                     <p>Los caballeros del zodiaco es una serie de anime y manga creada por Masami Kurumada. La historia
-                        sigue a un grupo de jóvenes guerreros conocidos como los Caballeros, quienes luchan para proteger a
+                        sigue a un grupo de jóvenes guerreros conocidos como los Caballeros, quienes luchan para
+                        proteger a
                         la diosa Atenea y salvar al mundo de las fuerzas del mal. Cada Caballero tiene una armadura
-                        inspirada en una constelación y posee habilidades especiales relacionadas con su constelación. La
+                        inspirada en una constelación y posee habilidades especiales relacionadas con su constelación.
+                        La
                         serie ha sido muy popular desde su lanzamiento en la década de 1980 y ha generado varias
                         adaptaciones, incluyendo películas, videojuegos y spin-offs.</p>
                     <p>Los Caballeros se dividen en tres rangos: de Bronce, de Plata y de Oro. Los de Bronce son los
-                        protagonistas principales, jóvenes guerreros que deben demostrar su valor en batalla. Los de Plata
+                        protagonistas principales, jóvenes guerreros que deben demostrar su valor en batalla. Los de
+                        Plata
                         son más poderosos y actúan como fuerzas de élite del Santuario. Los de Oro, los más poderosos de
                         todos, custodian las doce casas del Zodiaco y poseen un cosmo casi divino.</p>
                     <p>A lo largo de la serie, los Caballeros de Bronce enfrentan enemigos cada vez más poderosos: desde
-                        los guerreros de la Marina bajo el mando de Poseidón, hasta los espectros de Hades en el inframundo.
-                        Cada saga pone a prueba no solo su fuerza física, sino también su voluntad y el vínculo que los une
+                        los guerreros de la Marina bajo el mando de Poseidón, hasta los espectros de Hades en el
+                        inframundo.
+                        Cada saga pone a prueba no solo su fuerza física, sino también su voluntad y el vínculo que los
+                        une
                         como hermanos de batalla.</p>
                 </main>
-                
+
+                <section id="galeria" class="seccion seccion-galeria">
+                    <h2>Galería</h2>
+                   
+
+                    <section class="galeria-grid">
+                        <article class="galeria-card">
+                            <img src="img/01.jpg" alt="Imagen de galería 1">
+                        </article>
+                        <article class="galeria-card">
+                            <img src="img/02.jpg" alt="Imagen de galería 2">
+                        </article>
+                        <article class="galeria-card">
+                            <img src="img/04.jpg" alt="Imagen de galería 3">
+                        </article>
+                        <article class="galeria-card">
+                            <img src="img/05.jpg" alt="Imagen de galería 4">
+                        </article>
+                        <article class="galeria-card">
+                            <img src="img/06.webp" alt="Imagen de galería 5">
+                        </article>
+                        <article class="galeria-card">
+                            <img src="img/07.webp" alt="Imagen de galería 6">
+                        </article>
+                        <article class="galeria-card">
+                            <img src="img/09.webp" alt="Imagen de galería 7">
+                        </article>
+                        <article class="galeria-card">
+                            <img src="img/10.jpg" alt="Imagen de galería 8">
+                        </article>
+                        <article class="galeria-card">
+                            <img src="img/11.jpg" alt="Imagen de galería 9">
+                        </article>
+                    </section>
+                </section>
+
+                <section id="nosotros" class="seccion seccion-nosotros">
+                    <h2>Nosotros</h2>
+                    <p>Somos una empresa apasionada por la tecnología y la innovación, enfocada en crear soluciones
+                        digitales modernas y eficientes para nuestros clientes. Nuestro objetivo es brindar herramientas
+                        que ayuden a potenciar proyectos, negocios y emprendimientos mediante desarrollo web, diseño y
+                        programación de calidad.
+
+                        Trabajamos con compromiso, creatividad y dedicación en cada proyecto, buscando siempre ofrecer
+                        una experiencia profesional y personalizada. Creemos que cada idea tiene potencial, y por eso
+                        acompañamos a nuestros clientes desde el inicio hasta la finalización de sus objetivos
+                        digitales.
+
+                        Nos caracteriza la responsabilidad, el aprendizaje constante y la pasión por el desarrollo
+                        tecnológico. Apostamos a la mejora continua y a la creación de soluciones funcionales,
+                        intuitivas y adaptadas a las necesidades actuales del mercado.</p>
+                </section>
+
+                <section id="contactanos" class="seccion seccion-contactanos">
+                    <h2>Contáctanos</h2>
+                    <p>Completá el formulario o escribinos por los siguientes medios.</p>
+
+                    <div class="contacto-grid">
+                        <form class="contacto-form" action="#" method="post">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+                            <label for="correo">Correo</label>
+                            <input type="email" id="correo" name="correo" placeholder="tunombre@correo.com" required>
+
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Contanos en qué te podemos ayudar" required></textarea>
+
+                            <button type="submit" class="btn-enviar">Enviar mensaje</button>
+                        </form>
+                    </div>
+                </section>
+
             </div>
         </div>
     </div>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-columna">
+                <h4>Redes</h4>
+                <div class="social-links">
+                    <a class="social-link" href="https://www.linkedin.com/in/axel-hernandez-45550626a/" target="_blank" rel="noopener noreferrer">
+                        <img src="img/icons8-linkedin.svg" alt="LinkedIn">
+                        <span>LinkedIn</span>
+                    </a>
+                    <a class="social-link" href="https://github.com/Axel-H-Dev" target="_blank" rel="noopener noreferrer">
+                        <img src="img/icons8-github.svg" alt="GitHub">
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <p class="footer-copy">© 2026 Todos los derechos reservados.</p>
+    </footer>
 
     <script>
         function toggleNav() {
             document.getElementById('navbar').classList.toggle('navbar-oculta');
         }
         const video = document.getElementById("miVideo");
-                video.volume = 0.2; // 20% de volumen
+        video.volume = 0.2; // 20% de volumen
         function toggleMute() {
             const video = document.getElementById('miVideo');
             const btn = document.getElementById('btnMute');
